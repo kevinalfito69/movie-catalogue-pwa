@@ -1,4 +1,5 @@
 import TheMovieDbSource from '../../globals/moviedb-source';
+import templateCreator from '../templates/template-creator';
 
 const Upcoming = {
   async render() {
@@ -14,7 +15,10 @@ const Upcoming = {
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
     const movies = await TheMovieDbSource.upComingMovies();
-    console.log(movies);
+    const moviesContainer = document.querySelector('#movies');
+    movies.forEach((movie) => {
+      moviesContainer.innerHTML += templateCreator.createMovieItemTemplate(movie);
+    });
   },
 };
 
