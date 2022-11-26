@@ -15,7 +15,6 @@ const NowPlaying = {
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
     const movies = await TheMovieDbSource.nowPlayingMovies();
-    console.log(movies);
     const moviesContainer = document.querySelector('#movies');
     movies.forEach((movie) => {
       moviesContainer.innerHTML += templateCreator.createMovieItemTemplate(movie);
