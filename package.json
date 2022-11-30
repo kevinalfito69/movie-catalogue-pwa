@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.10",
     "workbox-window": "^6.5.4"
   },

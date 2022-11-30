@@ -1,5 +1,5 @@
 import TheMovieDbSource from '../../globals/moviedb-source';
-import templateCreator from '../templates/template-creator';
+import { createMovieItemTemplate } from '../templates/template-creator';
 
 const NowPlaying = {
   async render() {
@@ -17,7 +17,7 @@ const NowPlaying = {
     const movies = await TheMovieDbSource.nowPlayingMovies();
     const moviesContainer = document.querySelector('#movies');
     movies.forEach((movie) => {
-      moviesContainer.innerHTML += templateCreator.createMovieItemTemplate(movie);
+      moviesContainer.innerHTML += createMovieItemTemplate(movie);
     });
   },
 };
